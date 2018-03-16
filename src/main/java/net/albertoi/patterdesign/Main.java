@@ -1,5 +1,9 @@
 package net.albertoi.patterdesign;
 
+import net.albertoi.patterdesign.factory.PrototypeFactory;
+import net.albertoi.patterdesign.model.Cluster;
+import net.albertoi.patterdesign.model.Node;
+
 public class Main {
     public static void main(String[] args) {
         final String miniClusterLabel =   "Min cluster List";
@@ -7,24 +11,24 @@ public class Main {
         final String bigClusterLabel =    "Big cluster List";
 
 
-        ClusterImpl sizeSCluster = new ClusterImpl(miniClusterLabel);
+        Cluster sizeSCluster = new Cluster(miniClusterLabel);
         for (int c = 1; c <= 5; c++) {
-            NodeImpl nodeSizeS = new NodeImpl("Node " + c, c * 1024);
+            Node nodeSizeS = new Node("Node " + c, c * 1024);
             sizeSCluster.addNode(nodeSizeS);
         }
         PrototypeFactory.addPrototype(sizeSCluster.getName(), sizeSCluster);
 
-        ClusterImpl sizeMCluster = (ClusterImpl) PrototypeFactory.getPrototype(sizeSCluster.getName());
+        Cluster sizeMCluster = (Cluster) PrototypeFactory.getPrototype(sizeSCluster.getName());
         sizeMCluster.setName(mediumClusterLabel);
-        for (NodeImpl nodeSizeM : sizeMCluster.getNodes()) {
+        for (Node nodeSizeM : sizeMCluster.getNodes()) {
             nodeSizeM.setSize(nodeSizeM.getSize() * 2);
         }
         PrototypeFactory.addPrototype(sizeMCluster.getName(), sizeMCluster);
 
 
-        ClusterImpl sizeLCluster = (ClusterImpl) PrototypeFactory.getPrototype(sizeMCluster.getName());
+        Cluster sizeLCluster = (Cluster) PrototypeFactory.getPrototype(sizeMCluster.getName());
         sizeLCluster.setName(bigClusterLabel);
-        for (NodeImpl nodeSizeL : sizeLCluster.getNodes()) {
+        for (Node nodeSizeL : sizeLCluster.getNodes()) {
             nodeSizeL.setSize(nodeSizeL.getSize() * 2);
         }
         PrototypeFactory.addPrototype(sizeLCluster.getName(), sizeLCluster);

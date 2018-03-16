@@ -1,11 +1,12 @@
-package net.albertoi.patterdesign;
+package net.albertoi.patterdesign.model;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import net.albertoi.patterdesign.factory.Prototype;
 
 @ToString
-public class NodeImpl implements Prototype<NodeImpl> {
+public class Node implements Prototype<Node> {
     @Getter
     @Setter
     private String nodeName;
@@ -14,19 +15,19 @@ public class NodeImpl implements Prototype<NodeImpl> {
     @Setter
     private double size;
 
-    public NodeImpl(String nodeName, double size) {
+    public Node(String nodeName, double size) {
         this.nodeName = nodeName;
         this.size = size;
     }
 
 
     @Override
-    public NodeImpl clone() {
-        return new NodeImpl(this.nodeName, this.size);
+    public Node clone() {
+        return new Node(this.nodeName, this.size);
     }
 
     @Override
-    public NodeImpl deepClone() {
+    public Node deepClone() {
         return clone();
     }
 }

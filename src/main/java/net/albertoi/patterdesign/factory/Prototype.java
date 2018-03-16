@@ -1,4 +1,4 @@
-package net.albertoi.patterdesign;
+package net.albertoi.patterdesign.factory;
 
 public interface Prototype<T extends Prototype> extends Cloneable {
     T clone();
