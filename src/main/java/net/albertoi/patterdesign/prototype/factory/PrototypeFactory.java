@@ -1,7 +1,5 @@
-package net.albertoi.patterdesign.factory;
+package net.albertoi.patterdesign.prototype.factory;
 
-
-import net.albertoi.patterdesign.factory.Prototype;
 
 import java.util.HashMap;
 

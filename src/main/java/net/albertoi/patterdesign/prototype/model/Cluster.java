@@ -1,9 +1,9 @@
-package net.albertoi.patterdesign.model;
+package net.albertoi.patterdesign.prototype.model;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import net.albertoi.patterdesign.factory.Prototype;
+import net.albertoi.patterdesign.prototype.factory.Prototype;
 
 import java.util.ArrayList;
 import java.util.List;

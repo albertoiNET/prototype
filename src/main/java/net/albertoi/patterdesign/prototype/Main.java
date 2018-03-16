@@ -1,8 +1,8 @@
-package net.albertoi.patterdesign;
+package net.albertoi.patterdesign.prototype;
 
-import net.albertoi.patterdesign.factory.PrototypeFactory;
-import net.albertoi.patterdesign.model.Cluster;
-import net.albertoi.patterdesign.model.Node;
+import net.albertoi.patterdesign.prototype.factory.PrototypeFactory;
+import net.albertoi.patterdesign.prototype.model.Cluster;
+import net.albertoi.patterdesign.prototype.model.Node;
 
 public class Main {
     public static void main(String[] args) {
